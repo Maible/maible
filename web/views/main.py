@@ -26,11 +26,11 @@ class LoginView(FormView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect(reverse("index"))
+            return redirect(reverse("mailbox_index"))
         return super().get(request, *args, **kwargs)
 
     def get_success_url(self):
-        return reverse("index")
+        return reverse("mailbox_index")
 
 
 @login_required()

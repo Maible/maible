@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Maible - New Mailbox</title>
+</head>
+<body>
+    <p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Add</button>
+        </form>
+    </p>
+</body>
+</html>
