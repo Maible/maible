@@ -1,10 +1,10 @@
 from maible.base import INSTALLED_APPS, MIDDLEWARE  # NOQA
 
-SECRET_KEY = '...'
+SECRET_KEY = "..."
 DEBUG = False
 DEBUG_TOOLBAR = False
 
-TIME_ZONE = 'Europe/Istanbul'
+TIME_ZONE = "Europe/Istanbul"
 
 # Email Settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
