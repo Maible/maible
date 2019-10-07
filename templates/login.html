@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Maible - Email client</title>
+</head>
+<body>
+    <p>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Login</button>
+        </form>
+    </p>
+    <p><a href="#">Register</a></p>
+</body>
+</html>

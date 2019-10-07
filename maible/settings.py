@@ -23,7 +23,7 @@ APPEND_SLASH = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -38,7 +38,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'maible.wsgi.application'
 PAGINATION_LIMIT = 25
-LOGIN_URL = "/admin/login/"
+LOGIN_URL = "/login/"
 LOGOUT_REDIRECT_URL = "/"
 FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o755
 FILE_UPLOAD_PERMISSIONS = 0o644

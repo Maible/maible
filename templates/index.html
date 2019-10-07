@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head>
+    <title>Maible - Email client</title>
+</head>
+<body>
+    <h1>Some info will be added here.</h1>
+    {% if user.is_authenticated %}
+        <a href="{% url "logout" %}">Logout</a>
+    {% else %}
+        <a href="{% url "login" %}">Login</a>
+    {% endif %}
+</body>
+</html>
