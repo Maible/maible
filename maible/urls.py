@@ -9,6 +9,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", views.LoginView.as_view(), name="login"),
     path("logout/", views.logout_view, name="logout"),
+    path("mailbox/new/", views.CreateMailboxView.as_view(), name="add_mailbox"),
+    path("mailbox/", views.mailbox_index, name="mailbox_index"),
     path("", views.index_view, name="index"),
 ]
 
