@@ -1,0 +1,12 @@
+[run]
+plugins =
+    django_coverage_plugin
+[report]
+omit =
+    tests.py
+    *_test.py
+    *_tests.py
+    */site-packages/*
+    */migrations/*
+[html]
+title = Code Coverage
