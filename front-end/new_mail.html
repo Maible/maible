@@ -32,9 +32,9 @@
 				<nav id="maible-main-menu" role="navigation">
 					<ul>
 						<li id="newmail"><a href="new_mail.html">New Mail</a></li>
-						<li><a href="inbox.html">Inbox</a></li>
-						<li><a href="sent.html">Sent</a></li>
-						<li><a href="trash.html">Trash</a></li>
+						<li><a href="inbox.html"><label>Inbox</label></a></li>
+						<li><a href="sent.html"><label>Sent</label></a></li>
+						<li><a href="trash.html"><label>Trash</label></a></li>
 					</ul>
 				</nav>
 
@@ -48,26 +48,26 @@
 				</div>
 			</aside>
 
-			<div id="maible-main">
-				<div class="maible-narrow-content animate-box" data-animate-effect="fadeInLeft">
-
-					<div class="row">
-						<div class="col-md-4">
-							<h2>Get In Touch</h2>
-						</div>
-					</div>
-					<form action="">
-						<div class="row">
-							<div class="col-md-12">
-									<input type="text" class="form-control" placeholder="To">
-									<input type="text" class="form-control" placeholder="Subject">
-									<textarea name="" id="message" cols="30" rows="7" class="form-control"></textarea>
-									<input type="submit" class="btn btn-primary" value="Send Message">
-							</div>
-						</div>
+			<div id="maible-main">			
+				<h2 id="maible-logo">New Mail</h2>
+				<div id="maible-new_mail-up">
+				
+					<form  action="" method="">
+						<input class="form" type="text" placeholder="to" name="uname" required>
+						<input class="form" type="password" placeholder="subject" name="psw" required>
+						<textarea  class="form form-text" rows="7" ></textarea>
+						<button type="submit" class=" btn-outline">Send Message</button>
 					</form>
+				
+				</div>
 
-				</div>	
+				<div id="maible-login-down">
+					<p><small><span>&copy; 2019 All Rights Reserved.</span>
+							<span>Developed by ITU CE Students</span>
+					</small></p>
+				</div>
+
+
 			</div>
 		</div>
 
