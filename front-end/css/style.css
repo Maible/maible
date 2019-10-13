@@ -282,11 +282,11 @@ figure {
   list-style: none;
 }
 #maible-aside #maible-main-menu ul a {
-  height: 100px;
-  display:block;
-  width:100%;
+ 
 }
 #maible-aside #maible-main-menu ul li a {
+  height: 100px;
+  display:block;
   width:100%;
   color: #E5E5E5;
   text-decoration: none;
@@ -309,9 +309,22 @@ figure {
   transition-duration: 1s;
 }
 #maible-aside #maible-main-menu #newmail a:hover {
-  background: #07519A;
+  background: #88C4FF;
 }
 #maible-aside #maible-main-menu #newmail a:after {
+  height:0px;
+}
+#maible-aside #maible-main-menu #logout a {
+  background: #FF2710;
+  -webkit-transition-property: background; /* Safari */
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-property: background;
+  transition-duration: 1s;
+}
+#maible-aside #maible-main-menu #logout a:hover {
+  background: #FFB7AF;
+}
+#maible-aside #maible-main-menu #logout a:after {
   height:0px;
 }
 #maible-aside  #maible-main-menu ul li a:after {
