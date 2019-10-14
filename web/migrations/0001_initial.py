@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("django_mailbox", "0008_auto_20191007_1024"),
+        ("django_mailbox", "0007_auto_20180421_0026"),
     ]
 
     operations = [
