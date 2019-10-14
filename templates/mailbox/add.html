@@ -1,15 +1,13 @@
-<!doctype html>
-<html>
-<head>
-    <title>Maible - New Mailbox</title>
-</head>
-<body>
-    <p>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">Add</button>
-        </form>
-    </p>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}New Mailbox{% endblock %}
+{% block main_page %}
+    <div class="maible-login-up">
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn-outline" title="Add new mailbox">Add</button>
+</form>
+    </div>
+{% endblock %}
+{% block navbar %}{% endblock %}

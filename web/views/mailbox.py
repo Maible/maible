@@ -16,7 +16,13 @@ def mailbox_index(request):
     mailbox = request.user.mailboxes.first()
     if not mailbox:
         return redirect(reverse("add_mailbox"))
-    return render(request, "mailbox/index.html", {"mailbox": mailbox})
+    folder = request.GET.get('folder', default="inbox")
+    if folder == "outgoing":
+        messages = mailbox.mailbox.messages.filter(outgoing=True)
+    else:
+        messages = mailbox.mailbox.messages.filter(outgoing=False)
+
+    return render(request, "mailbox/index.html", {"mailbox": mailbox, 'messages': messages})
 
 
 class CreateMailboxView(LoginRequiredMixin, FormView):

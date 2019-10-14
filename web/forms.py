@@ -47,15 +47,27 @@ class MailboxAddForm(forms.Form):
         ("imap+ssl", "IMAP with SSL"),
         ("imap+tls", "IMAP with TLS (STARTTLS)"),
     )
-    name = forms.CharField(label=_("Name"), max_length=255, required=True)
+    name = forms.CharField(label=_("Name"), max_length=255, required=True, widget=forms.TextInput(attrs={
+        'class': 'form'
+    }))
     protocol = forms.ChoiceField(
-        label=_("Protocol"), required=True, choices=PROTOCOL_CHOICES, initial="imap"
+        label=_("Protocol"), required=True, choices=PROTOCOL_CHOICES, initial="imap", widget=forms.Select(attrs={
+            'class': 'form'
+        })
     )
-    username = forms.CharField(label=_("Username"), required=True, max_length=50)
+    username = forms.CharField(label=_("Username"), required=True, max_length=50, widget=forms.TextInput(attrs={
+        'class': 'form'
+    }))
     password = forms.CharField(
-        label=_("Password"), required=True, max_length=100, widget=forms.PasswordInput()
+        label=_("Password"), required=True, max_length=100, widget=forms.PasswordInput(attrs={
+            'class': 'form'
+        })
     )
-    domain = forms.CharField(label=_("Domain (Server)"), required=True, max_length=90)
+    domain = forms.CharField(label=_("Domain (Server)"), required=True, max_length=90, widget=forms.TextInput(attrs={
+        'class': 'form'
+    }))
     from_email = forms.EmailField(
-        label=_("Sender email"), required=True, max_length=255
+        label=_("Sender email"), required=True, max_length=255, widget=forms.EmailInput(attrs={
+            'class': 'form'
+        })
     )

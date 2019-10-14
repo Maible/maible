@@ -1,1 +1,53 @@
-TO BE Added
+{% extends "base.html" %}
+{% block content %}
+    <div class="maible-narrow-content">
+        <h2 class="maible-heading animate-box" data-animate-effect="fadeInLeft">Inbox</h2>
+        <div class="row row-bottom-padded-md">
+            {% for message in messages %}
+                <div class="animate-box" >
+                <div class="blog-entry">
+                    <a href="mail.html"></a>
+                    <div class="title">
+                        {% if message.read %}
+                            <h3>{{ message.subject }}</h3>
+                        {% else %}
+                            <h3><b>{{ message.subject }}</b></h3>
+                        {% endif %}
+
+                        <span><small>From {{ message.from_header }} </small> / <small> {{ message.processed }}</small></span>
+                    </div>
+                    <div class="desc">
+                        <p>functionality must be translated into visual aesthetics</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="animate-box" >
+                <div class="blog-entry">
+                    <a href="mail.html"></a>
+                    <div class="title">
+                        <h3>Welcome To Maible</h3>
+                        <span><small>From Nurdogan </small> / <small> 30.10.2019</small></span>
+                    </div>
+                    <div class="desc">
+                        <p>functionality must be translated into visual aesthetics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animate-box" >
+                <div class="blog-entry">
+                    <a href="mail.html"></a>
+                    <div class="title">
+                        <h3>Welcome To Maible</h3>
+                        <span><small>From Nurdogan </small> / <small> 30.10.2019</small></span>
+                    </div>
+                    <div class="desc">
+                        <p>functionality must be translated into visual aesthetics</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

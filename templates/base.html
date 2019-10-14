@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Maible &mdash; {% block title %}Accessible Mails{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Online email client for visually impaired users" />
+    <meta name="keywords" content="email, accessibility" />
+    <meta name="author" content="ITU CE Students" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    {% block extra_css %}{% endblock %}
+
+    <!-- Modernizr JS -->
+    <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]><script src="{% static "js/respond.min.js" %}"></script><![endif]-->
+
+</head>
+
+<body>
+<div id="maible-page">
+    {% block main_page %}
+    <a href="#" class="js-maible-nav-toggle maible-nav-toggle"><i></i></a>
+    {% block navbar %}
+    <aside id="maible-aside" role="complementary">
+        <h1 id="maible-logo"><a href="{% url "mailbox_index" %}">Maible</a></h1>
+        <!-- Why we use nav tag? Browsers, such as screen readers for disabled users,
+        can use this element to determine whether to omit
+        the initial rendering of this content. -->
+        <nav id="maible-main-menu" role="navigation">
+            <ul>
+                <li id="newmail"><a href="new_mail.html">New Mail</a></li>
+                <li class="maible-active"><a href="{% url "mailbox_index" %}?folder=inbox">Inbox</a></li>
+                <li><a href="{% url "mailbox_index" %}?folder=outgoing">Outgoing</a></li>
+                <li><a href="trash.html">Trash</a></li>
+                <li id="logout"><a href="{% url "logout" %}">Log Out</a></li>
+            </ul>
+        </nav>
+
+        <div class="maible-footer">
+            <p><small>&copy; 2019 All Rights Reserved.</span>
+                <span>Developed by ITU CE Students </span>
+            </small></p>
+        </div>
+    </aside>
+    {% endblock %}
+
+    <div id="maible-main">
+        {% block content %}{% endblock %}
+    </div>
+    {% endblock %}
+</div>
+
+<div id="record" >
+    <button id="recordButton">Press K key to Record</button>
+    <button id="stopButton" disabled>Press K key to Stop</button>
+</div>
+
+<!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<!-- Recording -->
+<script src="{% static "js/record.js" %}"></script>
+<!-- jQuery -->
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- Waypoints -->
+<script src="{% static "js/jquery.waypoints.min.js" %}"></script>
+<!-- MAIN JS -->
+<script src="{% static "js/main.js" %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
+
