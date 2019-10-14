@@ -44,7 +44,7 @@ class CreateMailboxView(LoginRequiredMixin, FormView):
         password = form.cleaned_data.get("password")
         domain = form.cleaned_data.get("domain")
         from_email = form.cleaned_data.get("from_email")
-        mail_uri = f"{protocol}://{username}:{password}@{domain}"
+        mail_uri = f"{protocol}://{username}:{password}@{domain}?archive=Archived"
         mailbox = Mailbox.objects.create(name=name, uri=mail_uri, from_email=from_email, active=True)
         UserMailbox.objects.create(user=self.request.user, mailbox=mailbox)
         return super().form_valid(form)
