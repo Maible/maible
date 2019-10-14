@@ -1,0 +1,904 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.5);
+  background: #EEEEEE;
+}
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+}
+a {
+  color: #228896;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+a:hover, a:active, a:focus {
+  color: #228896;
+  outline: none;
+  text-decoration: none !important;
+}
+p {
+  margin-bottom: 1.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+}
+figure {
+  margin-bottom: 2.5em;
+  float: left;
+  width: 100%;
+}
+
+
+#maible-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+#maible-aside {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  background: #23374D;
+}
+@media screen and (max-width: 1200px) {
+  #maible-aside {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #maible-aside {
+    width: 270px;
+    -moz-transform: translateX(-270px);
+    -webkit-transform: translateX(-270px);
+    -ms-transform: translateX(-270px);
+    -o-transform: translateX(-270px);
+    transform: translateX(-270px);
+  }
+}
+
+
+#maible-logo {
+  height:8%;
+  text-align: center;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 38px;
+}
+
+#maible-logo a {
+  color: #000;
+}
+
+
+
+
+#maible-page #maible-login-up{
+  height: 85%;
+  background-color: #23374D;
+  width: 100%;
+  padding-top:2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+  text-transform:uppercase;
+}
+#maible-page #maible-login-up form{
+  position:relative;
+  height: 25%;
+  width: 100%;
+  font-size:30px;
+
+}
+#maible-page #maible-login-up label{
+  position:relative;
+  height: 50%;
+  width: 100%;
+}
+#maible-page #maible-login-up input.form {
+  font-weight:bold;
+  text-align: center;
+  color: #EEEEEE;
+  border: 0px;
+  background-color: #162637;
+}
+#maible-page #maible-login-up button {
+  text-align:center;
+  position:relative;
+  height: 50%;
+  width: 100%;
+  margin-right: 0;
+  margin-bottom:10px;
+  font-size:30px;
+  text-transform:uppercase;
+  color: #FFFFFF;
+  border: 0px;
+  border-radius:3px;
+  background-color: #1089FF;
+}
+#maible-login-up a {
+  color: #1089FF;
+}
+
+/* Hide the browser's default checkbox */
+#maible-page #maible-login-up input.check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  padding:0.5em;
+  top: 0;
+  float:right;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #EEEEEE;
+  color: #162637;
+  border: 6px solid #0EE9C3;
+  border-radius:3px;
+}
+
+/* On mouse-over, add a grey background color */
+.checker:hover input.check ~ .checkmark {
+  background-color: #FFFFFF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checker input.check:checked ~ .checkmark {
+  background-color: #0EE9C3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checker input.check:checked ~ .checkmark:after {
+  display: inline-block;
+}
+
+/* Style the checkmark/indicator */
+.checker .checkmark:after {
+  right: 50px;
+  width: 5px;
+  height: 45px;
+  width: 2%;
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#maible-page #maible-login-down{
+  padding-top:1%;
+  text-align: center;
+  height: 7%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+
+
+
+#maible-page #maible-new_mail-up{
+  height: 85%;
+  width: 100%;
+  padding-top:2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
+  text-transform:uppercase;
+}
+#maible-page #maible-new_mail-up form{
+  position:relative;
+  height: 15%;
+  width: 100%;
+  font-size:30px;
+
+}
+#maible-page #maible-new_mail-up textarea{
+  position:relative;
+  height: 100%;
+  width: 100%;
+}
+#maible-page #maible-new_mail-up input.form {
+  font-weight:bold;
+  border: 0px;
+}
+#maible-page #maible-new_mail-up button {
+  text-align:center;
+  position:relative;
+  height: 100%;
+  width: 100%;
+  margin-right: 0;
+  margin-bottom:10px;
+  font-size:30px;
+  text-transform:uppercase;
+  color: #FFFFFF;
+  border: 0px;
+  border-radius:3px;
+  background-color: #1089FF;
+}
+
+
+
+
+#maible-aside #maible-main-menu ul {
+  text-align: center;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  #maible-aside #maible-main-menu ul {
+    margin: 0 0 2em 0;
+  }
+}
+#maible-aside #maible-main-menu ul li {
+  margin-top:10px;
+  width:100%;
+  margin: 0 0 0 0;
+  list-style: none;
+}
+#maible-aside #maible-main-menu ul a {
+
+}
+#maible-aside #maible-main-menu ul li a {
+  height: 100px;
+  display:block;
+  width:100%;
+  color: #E5E5E5;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  padding:40px;
+  letter-spacing: .2em;
+  font-family: "Roboto", Arial, sans-serif;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#maible-aside #maible-main-menu #newmail a {
+  background: #1089FF;
+  -webkit-transition-property: background; /* Safari */
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-property: background;
+  transition-duration: 1s;
+}
+#maible-aside #maible-main-menu #newmail a:hover {
+  background: #88C4FF;
+}
+#maible-aside #maible-main-menu #newmail a:after {
+  height:0px;
+}
+#maible-aside #maible-main-menu #logout a {
+  background: #FF2710;
+  -webkit-transition-property: background; /* Safari */
+  -webkit-transition-duration: 1s; /* Safari */
+  transition-property: background;
+  transition-duration: 1s;
+}
+#maible-aside #maible-main-menu #logout a:hover {
+  background: #FFB7AF;
+}
+#maible-aside #maible-main-menu #logout a:after {
+  height:0px;
+}
+#maible-aside  #maible-main-menu ul li a:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 30px;
+  left: 10px;
+  right: 10px;
+  background-color: #E5E5E5;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#maible-aside #maible-main-menu ul li a:hover:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+#maible-aside #maible-main-menu ul li.maible-active a:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+#maible-aside .maible-footer {
+  position: absolute;
+  bottom:5%;
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-height: 430px) {
+  #maible-aside .maible-footer {
+    visibility: hidden;
+    position: relative;
+    bottom: 0;
+    margin: auto;
+  }
+}
+#maible-aside .maible-footer span {
+  position: relative;
+  display: block;
+  margin: auto;
+}
+#maible-aside .maible-footer ul {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+  padding: 0;
+}
+#maible-aside .maible-footer ul li a{
+  color: rgb(199, 13, 58);
+}
+
+
+
+
+#maible-main {
+  height: 100%;
+  width: 85%;
+  float: right;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+@media screen and (max-width: 1200px) {
+  #maible-main {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #maible-main {
+    width: 100%;
+  }
+}
+#maible-main .maible-narrow-content {
+  position: relative;
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 4em 0;
+  clear: both;
+}
+@media screen and (max-width: 768px) {
+  #maible-main .maible-narrow-content {
+    width: 100%;
+    padding: 4em 1em;
+  }
+}
+
+
+#maible-main .maible-footer {
+  position: relative;
+  bottom:5%;
+  font-size: 13px;
+  text-align: center;
+  height: 200px;
+  width: 100%;
+}
+@media screen and (max-height: 430px) {
+  #maible-main .maible-footer {
+    visibility: hidden;
+    position: relative;
+    bottom: 0;
+    margin: auto;
+  }
+}
+#maible-main .maible-footer span {
+  position: relative;
+  display: block;
+  margin: auto;
+}
+
+
+
+body.offcanvas {
+  overflow-x: hidden;
+}
+body.offcanvas #maible-aside {
+  -moz-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  width: 270px;
+  background: #fff;
+  z-index: 999;
+  position: fixed;
+}
+body.offcanvas #maible-main, body.offcanvas .maible-nav-toggle {
+  top: 0;
+  -moz-transform: translateX(270px);
+  -webkit-transform: translateX(270px);
+  -ms-transform: translateX(270px);
+  -o-transform: translateX(270px);
+  transform: translateX(270px);
+}
+
+
+.blog-entry {
+  display:flex;
+  height: 50px;
+  width: 100%;
+  float: left;
+  background: #E5E5E5;
+  margin-bottom: 1px;
+}
+.blog-entry .title {
+  height:100%;
+  width: 200px;
+  float: left;
+  padding: 8px;
+}
+.blog-entry .title h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding:0;
+  margin-bottom: 1px;
+  letter-spacing: 1px;
+}
+.blog-entry a {
+  position:absolute;
+  background: rgba(255, 1, 0, 0.58);
+  display:block;
+  height:50px;
+  width:100%;
+  color: #000;
+  text-decoration: none;
+}
+.blog-entry .title span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.4) ;
+}
+.blog-entry .desc {
+  float:right;
+  height: 40px;
+  width: 80%;
+  overflow: hidden;
+  margin:0;
+}
+.blog-entry .desc p {
+  font-size: 11px;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 2px;
+  height:100%;
+  padding:10px;
+  margin:0px;
+  color: #000;
+}
+
+
+
+.maible-heading {
+  font-size: 18px;
+  margin-bottom: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.maible-heading.maible-light {
+  color: #fff;
+}
+.maible-heading span {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .maible-heading {
+    margin-bottom: 1em;
+  }
+}
+
+
+.mail-entry {
+  overflow:hidden;
+  height: 80%;
+  width: 100%;
+  background: #E5E5E5;
+  margin-bottom: 1px;
+}
+.mail-entry .title {
+  display:inline-block;
+  width: 100%;
+  padding: 20px;
+}
+.mail-entry .title h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.mail-entry .title h3 a {
+  color: #000;
+  text-decoration: none;
+}
+.mail-entry .title small  {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.4) ;
+}
+
+
+.mail-entry .desc {
+  height: 80%;
+  overflow-y: scroll;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.mail-entry .desc p{
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #000;
+}
+@media screen and (max-height: 768px) {
+  .mail-entry .desc{
+    height:60%;
+  }
+}
+
+#maible-main input {
+  float:right;
+  margin-right:20px;
+}
+
+
+.btn-danger {
+  background: #d9534f;
+  color: #fff;
+  border: 3px solid #d9534f;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active {
+  background: #d43f3a !important;
+  border-color: #d43f3a !important;
+}
+.btn-danger.btn-outline {
+  background: transparent;
+  color: #1E1E1E;
+  border: 3px solid #1E1E1E;
+}
+.btn-danger.btn-outline:hover, .btn-danger.btn-outline:focus, .btn-danger.btn-outline:active {
+  background: red;
+  color: #fff;
+}
+
+.btn-outline {
+  float:right;
+  margin-right:10px;
+  background: rgb(16, 137, 255);
+  color: rgb(238, 238, 238);
+  border: 3px solid rgb(16, 137, 255);
+  font-weight:bold;
+  font-size: 16px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active {
+  box-shadow: none;
+}
+
+
+.form {
+  position:relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-right: 0;
+  font-size: 100%;
+  font-weight: 300;
+  text-transform: initial;
+  border-radius: 3px;
+  padding: 10px 20px;
+  line-height: 1.42857;
+  color: #162637;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+.form:active, .form:focus {
+  outline: none;
+  border: 3px solid #000000;
+}
+.form.form-text {
+  position:relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: white;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  font-weight: 300;
+  border-radius: 3px;
+  line-height: 1.42857;
+}
+.maible-nav-toggle {
+  cursor: pointer;
+  text-decoration: none;
+}
+.maible-nav-toggle.active i::before, .maible-nav-toggle.active i::after {
+  background: #000;
+}
+.maible-nav-toggle.dark.active i::before, .maible-nav-toggle.dark.active i::after {
+  background: #000;
+}
+.maible-nav-toggle:hover, .maible-nav-toggle:focus, .maible-nav-toggle:active {
+  outline: none;
+  border-bottom: none !important;
+}
+.maible-nav-toggle i {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  width: 30px;
+  height: 2px;
+  color: #000;
+  font: bold 14px/.4 Helvetica;
+  text-transform: uppercase;
+  text-indent: -55px;
+  background: #000;
+  transition: all .2s ease-out;
+}
+.maible-nav-toggle i::before, .maible-nav-toggle i::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.maible-nav-toggle.dark i {
+  position: relative;
+  color: #000;
+  background: #000;
+  transition: all .2s ease-out;
+}
+.maible-nav-toggle.dark i::before, .maible-nav-toggle.dark i::after {
+  background: #000;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.maible-nav-toggle i::before {
+  top: -7px;
+}
+
+.maible-nav-toggle i::after {
+  bottom: -7px;
+}
+
+.maible-nav-toggle:hover i::before {
+  top: -10px;
+}
+
+.maible-nav-toggle:hover i::after {
+  bottom: -10px;
+}
+
+.maible-nav-toggle.active i {
+  background: transparent;
+}
+
+.maible-nav-toggle.active i::before {
+  top: 0;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.maible-nav-toggle.active i::after {
+  bottom: 0;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.maible-nav-toggle {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  z-index: 9999;
+  cursor: pointer;
+  opacity: 1;
+  visibility: hidden;
+  padding: 20px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .maible-nav-toggle {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+
+#record {
+  height: 100%;
+  right:0px;
+  position: fixed;
+  background: #E5E5E5;
+}
+#record #stopButton {
+  background: #ECC220;
+}
+#record button {
+  height: 100%;
+  width: 100px;
+  border: none;
+  background: #ed341d;
+  margin-left: 2px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  color:#ffffff;
+  text-transform:uppercase;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+}
+#record button:hover, button:focus {
+  outline: none;
+  background: #c72d1c;
+}
+#record button::-moz-focus-inner {
+  border: 0;
+}
+#record button:active {
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+  line-height: 3rem;
+}
+#record button:disabled {
+  pointer-events: none;
+  background: lightgray;
+  display:none;
+}
+#record button:first-child {
+  margin-left: 0;
+}
+#record audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+#record #formats {
+  margin-top: 0.5rem;
+  font-size: 80%;
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .col-xxs-12 {
+    float: none;
+    width: 100%;
+  }
+}
+
+.row-bottom-padded-lg {
+  padding-bottom: 7em;
+}
+@media screen and (max-width: 768px) {
+  .row-bottom-padded-lg {
+    padding-bottom: 1em;
+  }
+}
+
+.row-bottom-padded-md {
+  padding-bottom: 1em;
+}
+@media screen and (max-width: 768px) {
+  .row-bottom-padded-md {
+    padding-bottom: 1em;
+  }
+}
+
+.row-bottom-padded-sm {
+  padding-bottom: 1em;
+}
+@media screen and (max-width: 768px) {
+  .row-bottom-padded-sm {
+    padding-bottom: 1em;
+  }
+}
+
+.col-padding {
+  padding: 10px !important;
+}
+
+.js .animate-box {
+  opacity: 0;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E5E5E5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1E1E1E;
+}
+/*# sourceMappingURL=style.css.map */
