@@ -11,14 +11,11 @@ urlpatterns = [
     path("register/", views.RegistrationView.as_view(), name="register"),
     path("logout/", views.logout_view, name="logout"),
     path("mailbox/new/", views.CreateMailboxView.as_view(), name="add_mailbox"),
+    path("mailbox/<int:mail_id>/", views.mail_details, name="mail_details"),
     path("mailbox/", views.mailbox_index, name="mailbox_index"),
     path("", views.index_view, name="index"),
 ]
 
 if django_settings.DEBUG:
-    urlpatterns += static(
-        django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT
-    )
-    urlpatterns += static(
-        django_settings.STATIC_URL, document_root=django_settings.STATIC_ROOT
-    )
+    urlpatterns += static(django_settings.MEDIA_URL, document_root=django_settings.MEDIA_ROOT)
+    urlpatterns += static(django_settings.STATIC_URL, document_root=django_settings.STATIC_ROOT)
