@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ message.subject }}{% endblock %}
+{% block content %}
+    <div class="maible-narrow-content animate-box">
+        <h2 class="maible-heading animate-box" data-animate-effect="fadeInLeft">{{ message.subject }}</h2>
+        <div class="mail-entry">
+            <div class="title">
+                <h3><a href="#">{{ message.from_header }}</a></h3>
+                <span> <small> {{ message.processed }}</small></span>
+                <input type="submit" class="btn-danger btn-outline" value="Delete">
+                <input type="submit" class=" btn-outline" value="Reply">
+            </div>
+            <div class="desc">
+                <p>
+                    {{ message.html|safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

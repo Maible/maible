@@ -8,9 +8,7 @@ __all__ = ["LoginForm", "MailboxAddForm", "RegistrationForm"]
 
 class LoginForm(forms.Form):
     username = forms.CharField(label=_("Username"), required=True, max_length=150)
-    password = forms.CharField(
-        label=_("Password"), required=True, max_length=128, widget=forms.PasswordInput()
-    )
+    password = forms.CharField(label=_("Password"), required=True, max_length=128, widget=forms.PasswordInput())
 
     def clean(self):
         super().clean()
@@ -27,12 +25,10 @@ class RegistrationForm(forms.Form):
     first_name = forms.CharField(label=_("First name"), required=False, max_length=30)
     last_name = forms.CharField(label=_("Last name"), required=False, max_length=150)
     username = forms.CharField(label=_("Username"), required=True, max_length=150)
-    password = forms.CharField(
-        label=_("Password"), required=True, max_length=128, widget=forms.PasswordInput()
-    )
+    password = forms.CharField(label=_("Password"), required=True, max_length=128, widget=forms.PasswordInput())
 
     def clean_username(self):
-        username = self.cleaned_data['username']
+        username = self.cleaned_data["username"]
         username = username.lower().strip()
         if get_user_model().objects.filter(username=username).exists():
             raise forms.ValidationError(_("A user with this username already exists!"), code="invalid")
@@ -47,27 +43,40 @@ class MailboxAddForm(forms.Form):
         ("imap+ssl", "IMAP with SSL"),
         ("imap+tls", "IMAP with TLS (STARTTLS)"),
     )
-    name = forms.CharField(label=_("Name"), max_length=255, required=True, widget=forms.TextInput(attrs={
-        'class': 'form'
-    }))
+    name = forms.CharField(
+        label=_("Name"),
+        max_length=255,
+        required=True,
+        widget=forms.TextInput(attrs={"class": "form", "placeholder": "Name of the mailbox"}),
+    )
     protocol = forms.ChoiceField(
-        label=_("Protocol"), required=True, choices=PROTOCOL_CHOICES, initial="imap", widget=forms.Select(attrs={
-            'class': 'form'
-        })
+        label=_("Protocol"),
+        required=True,
+        choices=PROTOCOL_CHOICES,
+        initial="imap",
+        widget=forms.Select(attrs={"class": "form"}),
     )
-    username = forms.CharField(label=_("Username"), required=True, max_length=50, widget=forms.TextInput(attrs={
-        'class': 'form'
-    }))
+    username = forms.CharField(
+        label=_("Username"),
+        required=True,
+        max_length=50,
+        widget=forms.TextInput(attrs={"class": "form", "placeholder": "Username"}),
+    )
     password = forms.CharField(
-        label=_("Password"), required=True, max_length=100, widget=forms.PasswordInput(attrs={
-            'class': 'form'
-        })
+        label=_("Password"),
+        required=True,
+        max_length=100,
+        widget=forms.PasswordInput(attrs={"class": "form", "placeholder": "Password"}),
     )
-    domain = forms.CharField(label=_("Domain (Server)"), required=True, max_length=90, widget=forms.TextInput(attrs={
-        'class': 'form'
-    }))
+    domain = forms.CharField(
+        label=_("Domain (Server)"),
+        required=True,
+        max_length=90,
+        widget=forms.TextInput(attrs={"class": "form", "placeholder": "example: imap.itu.edu.tr:993"}),
+    )
     from_email = forms.EmailField(
-        label=_("Sender email"), required=True, max_length=255, widget=forms.EmailInput(attrs={
-            'class': 'form'
-        })
+        label=_("Sender email"),
+        required=True,
+        max_length=255,
+        widget=forms.EmailInput(attrs={"class": "form", "placeholder": "Sender email address"}),
     )

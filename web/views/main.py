@@ -38,13 +38,17 @@ class RegistrationView(FormView):
     form_class = RegistrationForm
 
     def form_valid(self, form):
-        first_name = form.cleaned_data.get('first_name')
-        last_name = form.cleaned_data.get('last_name')
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password')
+        first_name = form.cleaned_data.get("first_name")
+        last_name = form.cleaned_data.get("last_name")
+        username = form.cleaned_data.get("username")
+        password = form.cleaned_data.get("password")
         user = get_user_model().objects.create_user(
-            username=username, password=password, first_name=first_name, last_name=last_name,
-            is_staff=False, is_superuser=False
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name,
+            is_staff=False,
+            is_superuser=False,
         )
         login(self.request, user)
         return super().form_valid(form)
