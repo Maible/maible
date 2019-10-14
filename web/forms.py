@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib.auth import authenticate
 from django.utils.translation import ugettext as _
+from django.contrib.auth import get_user_model
 
-__all__ = ["LoginForm", "MailboxAddForm"]
+__all__ = ["LoginForm", "MailboxAddForm", "RegistrationForm"]
 
 
 class LoginForm(forms.Form):
@@ -20,6 +21,22 @@ class LoginForm(forms.Form):
             raise forms.ValidationError(_("Incorrect Credentials!"))
         if not user.is_active:
             raise forms.ValidationError(_("User is disabled!"))
+
+
+class RegistrationForm(forms.Form):
+    first_name = forms.CharField(label=_("First name"), required=False, max_length=30)
+    last_name = forms.CharField(label=_("Last name"), required=False, max_length=150)
+    username = forms.CharField(label=_("Username"), required=True, max_length=150)
+    password = forms.CharField(
+        label=_("Password"), required=True, max_length=128, widget=forms.PasswordInput()
+    )
+
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        username = username.lower().strip()
+        if get_user_model().objects.filter(username=username).exists():
+            raise forms.ValidationError(_("A user with this username already exists!"), code="invalid")
+        return username
 
 
 class MailboxAddForm(forms.Form):

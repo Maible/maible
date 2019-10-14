@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -16,30 +17,32 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
     <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
 
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
     <!-- FOR IE9 below -->
-    <!--[if lt IE 9]><script src="js/respond.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{% static "js/respond.min.js" %}"></script><![endif]-->
 
 </head>
 <body>
 <div id="maible-page">
-    <h1 id="maible-logo"><a href="inbox.html">Maible</a></h1>
+    <h1 id="maible-logo"><a href="{% url 'index' %}">Maible</a></h1>
     <div id="maible-login-up">
 
         <form action="" method="POST">
+            {{ form.errors }}
+            {% csrf_token %}
             <label for="id_first_name" class="hidden">First name</label>
             <input id="id_first_name" class="form" type="text" placeholder="First name" name="first_name">
             <label for="id_last_name" class="hidden">Last name</label>
             <input id="id_last_name" class="form" type="text" placeholder="Last name" name="last_name">
-            <label for="id_email" class="hidden">Email address</label>
-            <input id="id_email" class="form" type="text" placeholder="email address" name="email" required>
+            <label for="id_username" class="hidden">Username</label>
+            <input id="id_username" class="form" type="text" placeholder="Username" name="username" required>
             <label for="id_password" class="hidden">Password</label>
             <input id="id_password" class="form" type="password" placeholder="Password" name="password" required>
             <button type="submit" class=" btn-outline" title="Sign up">Sign Up</button>
@@ -63,13 +66,13 @@
 <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
 <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
 <!-- Recording -->
-<script src="js/record.js"></script>
+<script src="{% static "js/record.js" %}"></script>
 <!-- jQuery -->
-<script src="js/jquery.min.js"></script>
+<script src="{% static "js/jquery.min.js" %}"></script>
 <!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
+<script src="{% static "js/jquery.waypoints.min.js" %}"></script>
 <!-- MAIN JS -->
-<script src="js/main.js"></script>
+<script src="{% static "js/main.js" %}"></script>
 </body>
 </html>
 
